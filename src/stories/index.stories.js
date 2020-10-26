@@ -25,7 +25,7 @@ storybook
           default: boolean('Disabled', false)
         },
         text: {
-          default: text('Text', 'Hello Storybook')
+          default: text('Label', 'My Label')
         }
       },
       
