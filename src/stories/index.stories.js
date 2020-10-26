@@ -2,12 +2,21 @@ import { storiesOf } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 
+
 import MyButton from '../components/MyButton.vue';
 
-const storybook = storiesOf('Button', module);
-storybook.addDecorator(withKnobs);
+
+export default {
+  title: 'InfoButton',
+  component: MyButton,
+};
+
+const storybook = storiesOf('Button', module)
 
 storybook
+  .addDecorator(withKnobs)
+  .addParameters({ component: MyButton })
+  
   .add('default story', () => {
     return {
       components: { MyButton },

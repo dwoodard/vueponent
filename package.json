@@ -10,6 +10,8 @@
     "storybook:serve": "vue-cli-service storybook:serve -p 6006 -c config/storybook"
   },
   "dependencies": {
+    "@storybook/addon-docs": "^6.0.27",
+    "@storybook/addon-storysource": "^6.0.27",
     "core-js": "^3.6.5",
     "vue": "^2.6.11"
   },
