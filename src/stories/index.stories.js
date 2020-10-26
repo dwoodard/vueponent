@@ -7,17 +7,34 @@ import MyButton from '../components/MyButton.vue';
 
 
 export default {
-  title: 'InfoButton',
+  title: 'MyButton',
   component: MyButton,
 };
 
-const storybook = storiesOf('Button', module)
+const storybook = storiesOf('MyButton', module)
 
 storybook
   .addDecorator(withKnobs)
   .addParameters({ component: MyButton })
-  
-  .add('default story', () => {
+  .add('Primary', () => {
+    return {
+      components: { MyButton },
+      props: {
+        isDisabled: {
+          default: boolean('Disabled', false)
+        },
+        text: {
+          default: text('Label', 'My Label')
+        }
+      },
+      
+      template: `
+        <MyButton :isDisabled="isDisabled">{{ text }}</MyButton>
+      `,
+      methods: { action: action('clicked') }
+    };
+  })
+  .add('Secondary', () => {
     return {
       components: { MyButton },
       props: {
